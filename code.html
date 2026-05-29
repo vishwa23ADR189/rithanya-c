@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rithanya C | AI &amp; Full-Stack Developer</title>
+<!-- Tailwind CSS CDN with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'deep-bg': '#050505',
+            'card-bg': 'rgba(15, 15, 25, 0.7)',
+            'brand-purple': '#6366f1',
+            'brand-glow': '#a855f7',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          backgroundImage: {
+            'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-animations">
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .glow-border:hover {
+      border-color: #a855f7;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+    }
+    .skill-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .skill-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(99, 102, 241, 0.5);
+      box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .text-gradient {
+      background: linear-gradient(to right, #6366f1, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    body {
+      background-color: #050505;
+      color: #ffffff;
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #050505; }
+    ::-webkit-scrollbar-thumb { background: #1f2937; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: #374151; }
+  </style>
+</head>
+<body class="antialiased">
+<!-- BEGIN: Navigation -->
+<header class="fixed top-0 left-0 w-full z-50 bg-deep-bg/80 backdrop-blur-md border-b border-white/5">
+<nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="text-2xl font-bold tracking-tighter flex items-center gap-1">
+        RITHANYA <span class="text-brand-purple">C</span>
+</div>
+<div class="hidden md:flex items-center space-x-10 text-sm font-medium text-gray-400">
+<a class="text-white border-b-2 border-brand-purple pb-1" href="#home">HOME</a>
+<a class="hover:text-white transition-colors" href="#about">ABOUT</a>
+<a class="hover:text-white transition-colors" href="#work">WORK</a>
+<a class="hover:text-white transition-colors" href="#skills">SKILLS</a>
+<a class="hover:text-white transition-colors" href="#contact">CONTACT</a>
+</div>
+<a class="px-6 py-2 border border-brand-purple/50 rounded-lg text-sm font-semibold hover:bg-brand-purple/10 transition-all flex items-center gap-2 group" href="#contact">
+        Hire Me <span class="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">↗</span>
+</a>
+</nav>
+</header>
+<!-- END: Navigation -->
+<main>
+<!-- BEGIN: Hero Section -->
+<section class="relative pt-32 pb-20 px-6 min-h-screen flex items-center overflow-hidden" id="home">
+<!-- Background Glows -->
+<div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-brand-purple/10 rounded-full blur-[120px] -z-10"></div>
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+<div data-purpose="hero-content">
+<p class="text-brand-purple font-mono tracking-widest text-sm mb-4 uppercase">Building the Future</p>
+<h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+            I'm Rithanya C<br/>
+<span class="text-gradient">AI &amp; Full-Stack</span> Developer
+          </h1>
+<p class="text-gray-400 text-lg max-w-lg mb-10 leading-relaxed">
+            Building accessible healthcare and career-guidance technology for underserved communities. Specializing in AI-driven solutions and performant full-stack architectures.
+          </p>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg font-bold flex items-center gap-2 hover:opacity-90 transition-opacity">
+              View Projects <span>→</span>
+</button>
+<button class="px-8 py-3 border border-gray-700 rounded-lg font-bold hover:bg-white/5 transition-all">
+              Let's Connect
+            </button>
+</div>
+<div class="mt-12 flex items-center gap-8 text-xs text-gray-500 uppercase tracking-widest">
+<div class="flex items-center gap-2">
+<span class="w-2 h-4 border border-gray-500 rounded-full flex justify-center py-1">
+<span class="w-0.5 h-1 bg-gray-400 rounded-full animate-bounce"></span>
+</span>
+              Scroll Down
+            </div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-green-500 rounded-full shadow-[0_0_8px_#22c55e]"></span>
+              Available for work
+            </div>
+</div>
+</div>
+<div class="relative flex justify-center" data-purpose="hero-image">
+<div class="relative w-full max-w-lg animate-float">
+<!-- 3D Element Container -->
+<div class="relative z-10">
+<img alt="Futuristic laptop with a glowing lightbulb on a purple pedestal" class="w-full h-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJywuMtRg2zN5JR229Fvlu6ZYD5QpXS8gJopmOiTLKeZdQh9TkJAJlWWHkTAz3wCQACfdSXYksKdH9F4YGQ0qyPGJ8p2ZlkKuf-u3o4eLIJ0RIgDFN5jV8k8iytfP4W8Ka8DR_BqMc6JFGLPgZGGPQtuhE44tTuB8iGf-IgNAi_AbXW50PiCymYp8nkDN0ori78nwen9Q21HbflW9h6VIsXA760ZFu25OGc-5pqMpIuHHRqJTFsO4CiLiduh19pXqkFy8AWo3bAUs"/>
+</div>
+<!-- Glow under the pedestal -->
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-4/5 h-12 bg-brand-purple/40 blur-[40px] rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Hero Section -->
+<!-- BEGIN: About & Skills Grid -->
+<section class="py-24 px-6 max-w-7xl mx-auto" id="about">
+<div class="grid lg:grid-cols-2 gap-20">
+<!-- Left: About Me -->
+<div>
+<h2 class="text-3xl font-bold mb-8">About <span class="text-brand-purple">Me</span></h2>
+<div class="space-y-6 text-gray-400 leading-relaxed">
+<p>I am an AI and full-stack developer building accessible healthcare and career-guidance technology for underserved communities. Proficient in React, Node.js, Python, and cloud platforms.</p>
+<p>Beyond IT, I'm an Nifty, 100x as an creative exhibitor, feedback system and AI-powered recommendation engines that bridge the gap between complex technology and human needs. I hold certifications as a Microsoft Azure AI Engineer Associate and MongoDB Associate Developer.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-10">
+<div class="glass-card p-6 rounded-2xl border-l-4 border-l-brand-purple">
+<p class="text-3xl font-extrabold text-white">8.03</p>
+<p class="text-xs text-gray-500 uppercase tracking-widest mt-1">CGPA</p>
+</div>
+<div class="glass-card p-6 rounded-2xl border-l-4 border-l-indigo-500">
+<p class="text-3xl font-extrabold text-white">Azure</p>
+<p class="text-xs text-gray-500 uppercase tracking-widest mt-1">AI ENGINEER ASSOCIATE</p>
+</div>
+</div>
+</div>
+<!-- Right: Skills -->
+<div id="skills">
+<h2 class="text-3xl font-bold mb-8">Skills &amp; <span class="text-brand-purple">Technologies</span></h2>
+<div class="grid grid-cols-4 sm:grid-cols-5 gap-4">
+<!-- Row 1 -->
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-full aspect-square skill-card flex items-center justify-center p-4">
+<img alt="JavaScript" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaoCmKA5Bn1MZLbyOabFKZfBdEK35C1ufcTq3TnLZAI_iEfOyu5ORcOa5fKhVX4byVcbPj5xTlROqi9TD2Zed65Q8NY2YrhtMgfG1PaTWue7dTfvoIf2Qu3FN0UTrt4ZSxGRU2E1WkY7FqGkkumkXYGxvG2N99xTq5rOMsDr3H3NzQSUvZQAPSlJaU4yev_wG2xsWtd2fEg5dEbo0d997IVVR-S_ZT9IoZEKHe5oawvCC6C2DpECQWt4d1lwPiAHowcAUoSWh6hxI"/>
+</div>
+<span class="text-[10px] text-gray-400 font-medium">JavaScript</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-full aspect-square skill-card flex items-center justify-center p-4">
+<img alt="TypeScript" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB96wCWoIiH2zrAwTYVf9mPyyvXebkRvuM9_VGuEb33EDsmAU3MTUJXobcn7eASJn60NrPH4FJkbkVYVSNi9kdpIfoIMabq6ZK43Z3qUZB5CvYZJiwvaCbWY1xo30xGgULS1MZWZeckz9JXWr0erbyIQzTux68Az9HBIG9hTZt58a8Jr-aJ8GZxwWYaPEKb1CmtJhiHEhjYbVE110nCCydkOx5HAGXCrSyhZg9BaaHQqwVJvlslLAGYLs9RkiKAeLfWIqHcJP361vw"/>
+</div>
+<span class="text-[10px] text-gray-400 font-medium">TypeScript</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-full aspect-square skill-card flex items-center justify-center p-4">
+<img alt="React" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhlrWUOMt_P0GOSmIEYx0tiGVQWtqmOAOJO_SlspbUst_TkIkUwLfT7I0M5di-Ea67NOtPArimS1HYWJXrBhx1cSrx1p_lHHU4XXz77kRAwLUTI07xp2O1ZqSnDlOo2LUZdyRvQzuG_XMfgBjosSyvVMWr-KKJ-L8Ll_tuGloAHJM6I92qk7v-7CG_G1gawL-5prmV_4hxqJ3MED-EW3KDkkdgrVfl-FQr8lhGteImUQGRBW-sVyV8boGhU7ATfYeoFE3cOO2Smek"/>
+</div>
+<span class="text-[10px] text-gray-400 font-medium">React</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-full aspect-square skill-card flex items-center justify-center p-4">
+<img alt="Next.js" class="w-10 h-10 object-contain invert opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk8iZTwOQzf77letMuKHOoRjfju0bDagtP70uUmcfyQF7RW_N5CZSXGHoz4D-qKuG_FwkEGVF1I7r1ktbpk9i1dm2RLxt2Y4GT7MawBCX2uXmN9-ekFinPuSvjDu7NaoheSwSnIy0-5Hr5BQYgfJ7ihYyKkCN3-z3JPu8GngxEA4sA3CPIp4CzIi2RB2YqfzJ6WfbXYO8iCGhy-w7FagIGqVxc3I1IGf3lhQthXH9l17iNwwd1x6ppd7dr88Y0JUWF4jwURDAX9Fk"/>
+</div>
+<span class="text-[10px] text-gray-400 font-medium">Next.js</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-full aspect-square skill-card flex items-center justify-center p-4">
+<img alt="Node.js" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWpMoMVW9pTPMGgI9MwUpUnhb-qkMQDBBx_WqbrcUAJk7le4-Cl7rISsjb7sLCmtUj4v0PfgZEZQPZLK152yACqQ5jd7BZQG1CGTKfxEcCEUqaepToZwbU8uyvzosL9ocVLLR9dlhziubtghvPKZey-6vgdVOH4vPo1HV566-uO9WGBI5FXKxQfVX5B8tlc2f_y5STCpqlCnMtvSp2UH1uQq8m3cWZ_TEbTZpP-nyTQxC51BsmBhyPwS1v1b76x_CRttxTkc4y-kg"/>
+</div>
+<span class="text-[10px] text-gray-400 font-medium">Node.js</span>
+</div>
+<!-- Row 2 -->
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-full aspect-square skill-card flex items-center justify-center p-4">
+<img alt="Python" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHPsldkQgC4WTXcu07QIcdp1Wzqker3dOcZJChckIChhAwJN6Fv-H9nNkhJR_DOsOJEGIVqVxQ6Wd1_AUu-6mZnoWWr285rUiQgDIiHbbUldOTN5DV7Sx_wHvjC2SBcYxOwIc0qpQHNmmYVBKvf4Xq3bk7TTMD2lo25P4USVXcLcjYwOGITrThIniOROy2Cnc6af3lEHc-89SVaB7Sf5rVUHtRtE3HDXCC9wecWZ9XetO2K8QSP6FUINn8MKXqo0Wd5fnfrG2Gs4M"/>
+</div>
+<span class="text-[10px] text-gray-400 font-medium">Python</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-full aspect-square skill-card flex items-center justify-center p-4">
+<img alt="Tailwind CSS" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuRmV-espVJ5OpoMgsNHGZVghNC6hQ9Rl0ulJEn5bm5GwU6ZaJVZfexwNvDON6lcePS4KS_5uMkCarrYGmYbX0sT98PchUqLkl3xrNDbVTvZLeoPJKhp8IYjknXfbqcPr_AmCqhLGERxVnNDgnMA5zzweMmeCQV2TlC67okijdUOv2NRSgFSjSOk_fOmADx7lOzvIpmfzOHUkQViP2QgLl-RXUd9CXflN6vhODSifnREYFuftUfNcFVWcYxW9xQL73b_NsR3vmswY"/>
+</div>
+<span class="text-[10px] text-gray-400 font-medium">Tailwind CSS</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-full aspect-square skill-card flex items-center justify-center p-4">
+<img alt="HTML5" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNrx7ICOf4LiBAkJYP8Oj-z3-eTckmE01FeW8EO57Aq0hbGwnU8HvfwTsxdmy8A5_dptks912VAYs12KfM6x0nV5HB0lkQwaT5kUkH87AQOe2w_t1W2f2OONX0_2yUf74J6XWVVhZxO7qXWS2PDTPELVMhHRreDyTPb6nV9dLwsEKQTgCfgzrKGUpFtxyqP9N5G0UpCchOQCbLJSBjAXVYconePnyEDQefexAAvB8tPr0igpLbYBAfrT_gsZTqKeoN8eMfE7urlNs"/>
+</div>
+<span class="text-[10px] text-gray-400 font-medium">HTML5</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-full aspect-square skill-card flex items-center justify-center p-4">
+<img alt="CSS3" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHPSt2mVNH6zNXX_ISK9Apin_vCyR04q3hze7TwobkFxe9NFOw_d5QzHD6RNguGe39w1IocDDXHAeIjIjJwWtvrYhOAkDBHZNQwxf3KNuiSroNILqQrcRvp4IB6dzTWfVWaw-hUhCytqOMYui9AWf72dhbakqzSeF1pEj5jIttoJJWpKWCs0-_F8d_xwIdwgl6LIMS5oGWf4P_sH9mhAF_lypXuFHo7lM58LjZAMdl_GOCFsU30C8wHBvdD2SEIb4MdaipR4e_Vgs"/>
+</div>
+<span class="text-[10px] text-gray-400 font-medium">CSS3</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-full aspect-square skill-card flex items-center justify-center p-4">
+<img alt="Sass" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnTOvgdOzrNbVFyaVZ6XuWEzXQr1MnvAh36UeCmvWrHgGE6yAv87W5EDeXQ9aUK7rPdqXcPtEX3jIWe7HPcK5VhDhazBeJ_JETV4IzYOw92ujfd0lawdeZlHUOO3CzRo_kScR3meEkVvFrH0VaSwCT07Lc3NaYqcGKjSpzHBZ8vLzQqjrSs8BWyjqSvNhjoW5S2rfe5n9-oCdyr06c6dD4ajq1KWf7uGRxgYf1dVvYjvYGYOTbY94OyChL-2NjvRv6sTy0-nm8CYg"/>
+</div>
+<span class="text-[10px] text-gray-400 font-medium">Sass</span>
+</div>
+<!-- Row 3 -->
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-full aspect-square skill-card flex items-center justify-center p-4">
+<img alt="MongoDB" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBBMgrBxo_zm0aUO-qITY0a1hfWjQQ_SbS5kR4eg9Es-zGTiM4B6RNdzRGyZuCXYfJD-xfph3OFvlyNxZbpP1_I2r8P882QogFbdeN6_aZE9k1enLJjq1oWQyrBO0o71od_3pNlPdBHOOpjOOUHM5IRCtS40yB6tFnGJ_sGMwUm64Lpv-tR7H7QiEcjbWGd2zaazryXrzBMKp4qAS9id8_21qOdsTOLkSKfVlk93RJlRS5XxFrw7L23LtDTt9KbPMn6BoYoGF2i4o"/>
+</div>
+<span class="text-[10px] text-gray-400 font-medium">MongoDB</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-full aspect-square skill-card flex items-center justify-center p-4">
+<span class="text-xl font-bold text-gray-400">ex</span>
+</div>
+<span class="text-[10px] text-gray-400 font-medium">Express.js</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-full aspect-square skill-card flex items-center justify-center p-4">
+<img alt="Git" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcuVbZVq7rjnFoTrCGzOxiq3L5CNdUggV6fmx-M92WQTlxXXntu8V1S53N1_4ZMMbJT6n7jHgYG13fUEbVa6MXHSBx6csfhiLPfPOiZs5OxfIHpaOIBJ9OFaX7mcRYdXo5ojcuvmS342-lqfhZqAT-h8qCoiBlH6AdWNWcU49srL-CEbP2WzekbbUgZt6kon_VZGcVuch39VTlXVlT9IUtlqWl_M5AgxpbpLFtxsHVmLxoDdet6V2dh-f2dn9wsPf-vWEYaetfZ7g"/>
+</div>
+<span class="text-[10px] text-gray-400 font-medium">Git</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-full aspect-square skill-card flex items-center justify-center p-4">
+<img alt="GitHub" class="w-10 h-10 object-contain invert opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0khyMhVC5ri4WQADrDL1m9hhRlP8uD-8-dnd93xePo5OQa7XCyPsNrBgJd9wSCDUrTidX1DsVVFdz3La_hrT00NoXVtKO5c74YKGBsF8bdvtblI6d7m2BwJ55jmTCCU-PUYKDWmOMCM__uf3muXFmw_g6kTxe69IldYLq1T9-O9D4gPlaNWUR8b2SfYDa-V6-3Y_fEe5knxfAxz3D0fZ_U6jPergizwrEXnkl5X8h3Oav1f-l5coxAF8SyCmpQLrPsEz3v7fFMBE"/>
+</div>
+<span class="text-[10px] text-gray-400 font-medium">GitHub</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-full aspect-square skill-card flex items-center justify-center p-4">
+<img alt="Docker" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJkchG6P1m2ALKxlOEWiWny0w0oqv-L7AJ0_BQLlJyLF4YP4f6vwtDFkosuVrb4PQ_cQBvvbc81EwGsofBV0qbA5n8CSgU7qEr1nv_DaC989p4NfkeY4HRYsv2vZSX45Q3GrT20Z0351CR6h1-JZYj6wc0LkYr132JDQJfNE_0pPuTYphQ5xH2AdnrrLZiqnuvLYqW6cm4IR6gOb9lTqKSvxZSaNAx6HC1q_K5g7Sb1iquEPAp5sQBzgIAuMxz9vwosyLJRokVxeU"/>
+</div>
+<span class="text-[10px] text-gray-400 font-medium">Docker</span>
+</div>
+<!-- Row 4 -->
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-full aspect-square skill-card flex items-center justify-center p-4">
+<img alt="Firebase" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnITEIlAJz1Ii1BhQn4z0gpWMFAaKVH1asfSwLDxwwK5fZmIaIIy0i3-GWoJR4MhSMpK-nnj3XKkdgowI6rZNfIwGl5-JxeW_PWcA4L7NwRYadCl2Djgt3UyvuYpmmCjdCNrfzjBJeFksT5-nUM94bVAliDzt2o-0paXTF3FMtlf6qd2dCYsSJTD453Lzy5F-L_KL0BTFCPBQ0P5VDicA9D4icCOPlWoGl4LqTEd-n41eH4GzB0O4nXBW0ZAbyPqAQszD8ww5Atmw"/>
+</div>
+<span class="text-[10px] text-gray-400 font-medium">Firebase</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-full aspect-square skill-card flex items-center justify-center p-4">
+<img alt="AWS" class="w-10 h-10 object-contain invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr1nKwvpp2GRoefDIXZN0tI66Kc6Ph6CZZRps1MIa93xlY7SoqVtyvwK8hThFTBFCxZMJoweihBmLiF7QqLZlnaOfOrJyNTWgzAMYIz8pb9-RAiNRjF44RzYev3pUHi9gz0HigeLO9Huo-cLMg-lpcff0Pr47AAo0iyw0SyBnN7l1lPdfTfCym8oU5tPfnM7mWu017F-INa8YzuLEaG4Xd5QXk4pOShqwurE14UkDFnN_IySet5ZRbPwzV_U8LTCMzV0pM3oCw6tw"/>
+</div>
+<span class="text-[10px] text-gray-400 font-medium">AWS</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-full aspect-square skill-card flex items-center justify-center p-4">
+<img alt="PostgreSQL" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRQlN-T-EvOaKum0BLRL_irWEVZCLlbi-eDu2z7NGrY3hiuidZdtHmRw5PefWt4Yo5-J-7h9cW-qE9RgZOQIlG_EavX6U_aLc0xLsMwpr7dreZwDK_0W6dvUo5IK7RDHeRRVVbFgvHepXt_RCYqG3dclmhWUcBgsk5gMEbzv9YMi-VN17bfyy1T8qQOOD3DXav3dyQ2tGRNWA2IpGMTFd7Qfe5T0pyFd8h-pL8pekysYZokF5TOlxCN8SuTtkWrgTwG6FqWWhf3Kc"/>
+</div>
+<span class="text-[10px] text-gray-400 font-medium">PostgreSQL</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-full aspect-square skill-card flex items-center justify-center p-4">
+<img alt="Figma" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBri9LhD2ZChYkrn9DeXCszD_DLpS3HzL4TV2oPtifa88MFc9kCbd_imXVsie1lqhwvB95rSKnmJtaon8vcD5MLB5zfFESQodv716jOzN9fOQFM86UCSJ6BP2JuvOVGPznHoX_RrvaxbppvRCZhVzzPN0Ua79GWZjK2Q8WIe8ImQxbLsfaMbL8iOHFvko3ICxpNk04HpKlDWvjrIrkMgGSQpP19cN4xbDritf6oVeuxAffIbixnHVFrJf899kIdhxo_z41NIm1UsdE"/>
+</div>
+<span class="text-[10px] text-gray-400 font-medium">Figma</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-full aspect-square skill-card flex items-center justify-center p-4">
+<img alt="VS Code" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2WqvVO-rzbiaz3_g1o60C5z993Mx78wD4YPT_11Rpnsw5tAbCi-eVfb0n9gB5IVWM0PRCriClEbdbEP-JGrD_ioWNfuQz-8ufkJ2LoWdMMX_CzHk1XXnquI3uwSwRM15kkVgOpCAkZtkybwZmHpVcwB1MP7fBYse3hrjUtkE-8YOhQfrcUOAUg-rbjvLgl7vZp2pGJCBlr9aBMkLGkyogyLRONYm-CjBANrx3z5ToddJSeidxmPARNOMbcyfcCxYdDv3XR34x8b4"/>
+</div>
+<span class="text-[10px] text-gray-400 font-medium">VS Code</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: About & Skills Grid -->
+<!-- BEGIN: Featured Projects -->
+<section class="py-24 px-6 bg-gradient-to-b from-deep-bg to-black/50" id="work">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold">Featured <span class="text-brand-purple">Impact</span></h2>
+<p class="text-gray-500 mt-4">Solving real-world problems with advanced AI and modern engineering.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Project Card 1 -->
+<div class="glass-card rounded-3xl overflow-hidden group glow-border transition-all duration-500 border border-white/10">
+<div class="p-4">
+<div class="rounded-2xl overflow-hidden aspect-video bg-indigo-900/20 relative">
+<img alt="RuralAI Dashboard" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx6Nzjz5wsCmaIGsDjkeyg5xDYRq2fRYRjZR9PUxxaNUNkK0UQez5AxRAKFVlqrp7HacjeHCpXxaewUCPh3S3EBWBsOM3E1rUWvsrxoCZXuSJr7AddqdEA0MMs5As4jK4wiIv2kkY5fzLisQ8GUG9mWxdNIy7vXMSV6uFEjOhujK4l5hvZ5Qj2H7XUF1Lro4nxR3_5gH-nJ8GqcvpAcC0BEHAepZimzX1lDFxWroVNHe2J5ArCga5uWDc-KInn10heDv-2kbdTxFk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+</div>
+</div>
+<div class="px-6 pb-6">
+<p class="text-[10px] text-brand-purple font-mono uppercase tracking-widest mb-2">Telehealth System</p>
+<h3 class="text-xl font-bold mb-2">RuralAI Dashboard</h3>
+<p class="text-gray-400 text-sm mb-6 leading-relaxed">AI-powered system for remote healthcare diagnostics and patient monitoring.</p>
+<div class="flex items-center justify-between">
+<div class="flex gap-2">
+<span class="text-[9px] px-2 py-1 bg-white/5 rounded-md border border-white/10 text-gray-400 uppercase">React</span>
+<span class="text-[9px] px-2 py-1 bg-white/5 rounded-md border border-white/10 text-gray-400 uppercase">NestJS</span>
+</div>
+<div class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-xs group-hover:bg-brand-purple transition-all">→</div>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="glass-card rounded-3xl overflow-hidden group glow-border transition-all duration-500 border border-white/10">
+<div class="p-4">
+<div class="rounded-2xl overflow-hidden aspect-video bg-purple-900/20 relative">
+<img alt="Placement Feedback" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7gTi3O1rgBKy7dQmZNO3X4skWunIKTc8w4d0JkhCxdJilPNMS_0pGkAYUiRPNUtGHw5NufhaJ5tTW6BdX3rkRPHd7d2calFVUrqNVodA_B0DgOxL1BbTmgtEh5nHcTbcL7lr9vhVkj_q1XSWiKne0BJtBsyvzPJN7pco1QOaYWaX5NrfUPnA8HzS9gYOin6cvLgigZgHjjl-qmv_ONLT7WvRR8zgx9thHO9FILpTE9i0SkI-whF6FspE5FBOn_Oc-2GA3KTItTXc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+</div>
+</div>
+<div class="px-6 pb-6">
+<p class="text-[10px] text-brand-purple font-mono uppercase tracking-widest mb-2">Education Management</p>
+<h3 class="text-xl font-bold mb-2">Placement Feedback Portal</h3>
+<p class="text-gray-400 text-sm mb-6 leading-relaxed">Automated feedback collection and analytics for educational institutions.</p>
+<div class="flex items-center justify-between">
+<div class="flex gap-2">
+<span class="text-[9px] px-2 py-1 bg-white/5 rounded-md border border-white/10 text-gray-400 uppercase">NextJS</span>
+<span class="text-[9px] px-2 py-1 bg-white/5 rounded-md border border-white/10 text-gray-400 uppercase">PostgreSQL</span>
+</div>
+<div class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-xs group-hover:bg-brand-purple transition-all">→</div>
+</div>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="glass-card rounded-3xl overflow-hidden group glow-border transition-all duration-500 border border-white/10">
+<div class="p-4">
+<div class="rounded-2xl overflow-hidden aspect-video bg-blue-900/20 relative">
+<img alt="AI Career Guidance" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOVYoQcnlQKKrn04TqFLWfhf63WaE4qAXAY05ppPOB1H6pO5rpvE6o_SqxtgwPCCG8zDO8MVLjEK34io5uGIQE-j-ydggo2Xnw4nVp3ynEjQOFFQAiL8harma8LVkxj8FEI03Uo-GV1-P9jja1HE9XNUJfWgluQhPs_SUtOg3vbOh__fvFTDzRcNobhBJB4gqyy9p9PBTHdB_r5iQt1QMfK8W9HwJelDZA-wEiYvNp-U1L_Fzuos68kKnVSR7ZqCg1leZ67F8yLUk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+</div>
+</div>
+<div class="px-6 pb-6">
+<p class="text-[10px] text-brand-purple font-mono uppercase tracking-widest mb-2">AI Solution</p>
+<h3 class="text-xl font-bold mb-2">AI Career Guidance</h3>
+<p class="text-gray-400 text-sm mb-6 leading-relaxed">AI-driven career path recommender using skills, interests, and job market analysis.</p>
+<div class="flex items-center justify-between">
+<div class="flex gap-2">
+<span class="text-[9px] px-2 py-1 bg-white/5 rounded-md border border-white/10 text-gray-400 uppercase">Python</span>
+<span class="text-[9px] px-2 py-1 bg-white/5 rounded-md border border-white/10 text-gray-400 uppercase">FastAPI</span>
+</div>
+<div class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-xs group-hover:bg-brand-purple transition-all">→</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Featured Projects -->
+<!-- BEGIN: Contact Section -->
+<section class="py-24 px-6" id="contact">
+<div class="max-w-7xl mx-auto glass-card rounded-[3rem] overflow-hidden relative border-none">
+<!-- Background decorative blob -->
+<div class="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-purple/10 blur-[100px] rounded-full"></div>
+<div class="grid lg:grid-cols-2 p-12 lg:p-20 relative z-10">
+<div>
+<h2 class="text-4xl font-extrabold mb-6 leading-tight">
+              Let's build <span class="text-gradient">something</span><br/>together
+            </h2>
+<p class="text-gray-400 mb-12 max-w-sm">I'm currently looking for new opportunities to apply my skills in AI and Full-stack development. Whether it's a small idea or a big project, I'm excited to collaborate and bring ideas to life.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-4 group">
+<div class="w-10 h-10 rounded-xl glass-card flex items-center justify-center group-hover:bg-brand-purple/20 transition-all">
+<svg class="w-5 h-5 text-brand-purple" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<p class="text-sm">+91 7696737407</p>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-10 h-10 rounded-xl glass-card flex items-center justify-center group-hover:bg-brand-purple/20 transition-all">
+<svg class="w-5 h-5 text-brand-purple" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<p class="text-sm">rithanyac9@gmail.com</p>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-10 h-10 rounded-xl glass-card flex items-center justify-center group-hover:bg-brand-purple/20 transition-all">
+<svg class="w-5 h-5 text-brand-purple" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<p class="text-sm">Tamil Nadu, India</p>
+</div>
+</div>
+</div>
+<div class="mt-12 lg:mt-0">
+<form class="glass-card p-8 rounded-3xl border-white/5 space-y-6">
+<div class="grid grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs text-gray-500 uppercase tracking-widest ml-1">Your Name</label>
+<input class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-purple/50 transition-colors" placeholder="Jane Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs text-gray-500 uppercase tracking-widest ml-1">Your Email</label>
+<input class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-purple/50 transition-colors" placeholder="jane@example.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs text-gray-500 uppercase tracking-widest ml-1">How can I help?</label>
+<textarea class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-purple/50 transition-colors" placeholder="Tell me about your project..." rows="4"></textarea>
+</div>
+<button class="w-full py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-all shadow-[0_10px_20px_rgba(79,70,229,0.3)]" type="submit">
+                Send Message <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Contact Section -->
+</main>
+<!-- BEGIN: Footer -->
+<footer class="py-12 px-6 border-t border-white/5">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="text-lg font-bold">
+        RITHANYA <span class="text-brand-purple">C</span>
+</div>
+<div class="text-sm text-gray-500">
+        2024 • All rights reserved
+      </div>
+<div class="flex items-center gap-6">
+<a class="text-gray-400 hover:text-white transition-colors" href="#">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg>
+</a>
+<a class="text-gray-400 hover:text-white transition-colors" href="#">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</a>
+<a class="text-gray-400 hover:text-white transition-colors" href="#">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+<a class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all" href="#">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M5 10l7-7m0 0l7 7m-7-7v18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+</footer>
+<!-- END: Footer -->
+</body></html>
